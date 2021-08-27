@@ -1,15 +1,5 @@
 #include "kernel.h"
 
-// void user_input(char *input) {
-//     if (strcmp(input, "END") == 0) {
-//         shutdown();
-//         asm volatile("hlt");
-//     }
-//     print_string(input);
-//     print_string("\n>");
-// }
-
-
 void user_input(char* input)
 {
     if(strcmp(input, "END") == 0)
@@ -33,6 +23,9 @@ void user_input(char* input)
     } else if(strcmp(input, "HELP") == 0)
     {
         print_help();
+    } else if(strcmp(input, "BOOT") == 0) {
+        clear_screen();
+        boot_screen();
     } else {
         print_string(input);
         print_string("\n>");
