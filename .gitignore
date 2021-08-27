@@ -1,0 +1,11 @@
+*/*.bin
+*.bin
+*/*.o
+*.o
+*/*/*.o
+*/*/*.bin
+*/*/*.elf
+*/*.elf 
+*.elf
+gitpass.txt
+.vscode
