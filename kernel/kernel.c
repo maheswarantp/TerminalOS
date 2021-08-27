@@ -4,7 +4,7 @@ void user_input(char* input)
 {
     if(strcmp(input, "END") == 0)
     {
-        print_string("Stopping CPU...Bie\n");
+        shutdown();
         asm volatile("hlt");
     } else if(strcmp(input,"C-G") == 0) 
     {
@@ -25,12 +25,33 @@ void user_input(char* input)
         print_help();
     } else if(strcmp(input, "BOOT") == 0) {
         clear_screen();
+        int color = get_current_color();
         boot_screen();
+        change_color(color);
+    } else if(strcmp(input, "WHOAMI") == 0){
+        print_string("Welcome to Terminal OS v2: Type and enter END to exit\n>");
+        print_string("Author: max1712345\n");
+        print_string("Source code: https://github.com/coding-geek1711/TerminalOS\n");
     } else {
         print_string(input);
-        print_string("\n>");
     }
+    print_string("\n>");
+
 }
+
+
+void shutdown()
+{
+    clear_screen();
+    print_string("\n");
+    print_string("\n");
+    print_string("\n");    
+    print_string("-------------------------------------------------------------------------------\n");
+    print_string("                               POWEROFF SUCCESSFULL                            \n");
+    print_string("-------------------------------------------------------------------------------\n");
+}
+
+
 
 void print_help()
 {
@@ -60,4 +81,5 @@ void main()
     irq_install();
     clear_screen();
     boot_screen();
+    print_string(">");
 }
