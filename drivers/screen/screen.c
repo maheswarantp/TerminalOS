@@ -59,12 +59,12 @@ int scroll_in(int offset)
 
 int print_char(char c, int col, int row, char attr) {
     u8 *vidmem = (u8*) VIDEO_ADDRESS;
-    if (!attr) attr = WHITE_ON_BLACK;
+    if (!attr) attr = WHITE;
 
     /* Error control: print a red 'E' if the coords aren't right */
     if (col >= MAX_COLS || row >= MAX_ROWS) {
         vidmem[2*(MAX_COLS)*(MAX_ROWS)-2] = 'E';
-        vidmem[2*(MAX_COLS)*(MAX_ROWS)-1] = RED_ON_WHITE;
+        vidmem[2*(MAX_COLS)*(MAX_ROWS)-1] = WHITE * 16 + RED;
         return get_offset(col, row);
     }
 

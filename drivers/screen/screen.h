@@ -9,11 +9,24 @@
 #define MAX_COLS 80
 #define MAX_ROWS 25
 
-#define WHITE_ON_BLACK 0x0f
-#define RED_ON_WHITE 0xFC
-#define GREEN_ON_BLACK 0x0A
-#define YELLOW_ON_BLACK 0x0e
-#define BLUE_ON_BLACK 0x09
+#define BLACK 0
+#define BLUE 1
+#define GREEN 2
+#define CYAN 3
+#define RED 4
+#define MAGENTA 5
+#define BROWN 6
+#define LGRAY 7
+#define DGRAY 8
+#define LBLUE 9
+#define LGREEN 10
+#define LCYAN 11
+#define LRED 12
+#define LMAGENTA 13
+#define YELLOW 14
+#define WHITE 15
+
+
 
 void set_char_at_video_memory(char character, int offset);
 void set_color_at_video_memory(int offset, int FONT_COLOR);

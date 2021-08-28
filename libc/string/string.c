@@ -59,7 +59,8 @@ void print_backspace() {
     int offset = get_cursor()-2;
     int row = get_row_from_offset(offset);
     int col = (offset - (get_row_from_offset(offset)*2*MAX_COLS))/2;
-    print_char(0x08, col, row, WHITE_ON_BLACK);
+    int COLOR = get_current_color();
+    print_char(0x08, col, row, COLOR);
 }
 
 int strlen(char s[])                        // count len of string

@@ -7,5 +7,6 @@
 #include "../../cpu/port/port.h"
 #include "../../cpu/isr.h"
 #include "../../kernel/kernel.h"
+#include "../../kernel/utils/user_input.h"
 
 #endif
