@@ -14,7 +14,7 @@ void split_string(char s[], char s1[], char s2[])
     i++;
     while(s[i] != '\0')
     {
-        if(j>10) break;
+        // if(j>10) break;
         s2[j] = s[i];
         i++;
         j++;
