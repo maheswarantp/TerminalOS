@@ -28,8 +28,13 @@ static void keyboard_callback(registers_t regs)
     if(scancode >  SC_MAX) return;
     if(scancode == BACKSPACE)
     {
-        backspace(key_buffer);
-        print_backspace();
+        int offset = get_cursor();
+        int COL_NUMBER = offset % MAX_COLS;
+        if(COL_NUMBER > 2)
+        {
+            backspace(key_buffer);
+            print_backspace();
+        }
     } else if (scancode == ENTER)
     {
         print_string("\n");
