@@ -13,5 +13,6 @@ void reverse(char s[]);
 void backspace(char s[]);
 void append(char s[], char n);
 int strcmp(char s1[], char s2[]);
+void split_string(char s[], char s1[], char s2[]);
 
 #endif

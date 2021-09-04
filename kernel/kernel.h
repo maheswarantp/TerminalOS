@@ -5,3 +5,5 @@
 #include "utils/visuals.h"
 #include "utils/user_input.h"
 #include "../cpu/isr.h"
+
+void main();

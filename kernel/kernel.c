@@ -1,6 +1,5 @@
 #include "kernel.h"
 
-
 void main()
 {
     isr_install();

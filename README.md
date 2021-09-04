@@ -46,7 +46,7 @@
 - Scroll
 - Keyboard IO complete
   (How idt works and PIC remapping part is still a bit sketchy but it works)
-
+- Caps lock functionality has been added. All alphabets can have 2 types now...Uppercase and lowercase
 ## What is to be done?
 - Nasty linking bug which explodes binary size to > 130mb ==> fixed but can operate only in fda mode  ==> Fixed
 - Follow [here](https://github.com/cfenollosa/os-tutorial/blob/master/13-kernel-barebones/Makefile) for solution    (linking bug)

@@ -24,13 +24,14 @@ void print_string(char* string)
 void print_decimal(int val)                 // prints number in decimal ascii
 {
     char string[9] = "00000000";
-    int n = 7;
+    int n = 7, i;
     int temp;
-    while(val != 0)
+    // print_string("0x");
+    for(i = 8; i >=0; i--)
     {
         temp = val % 10;
         val = val / 10;
-        n--;
+        string[i] = temp + '0';
     }
     print_string(string);
     print_string("D");
@@ -39,18 +40,18 @@ void print_decimal(int val)                 // prints number in decimal ascii
 void print_hex(int val)                     // prints number in hex ascii
 {
     char string[9] = "00000000";
-    int n = 7;
+    int n = 7, i;
     int temp;
     print_string("0x");
-    while(val != 0)
+    for(i = 8; i >=0; i--)
     {
         temp = val % 16;
         val = val / 16;
+
         if(temp < 10 && temp >= 0)
-            string[n] = temp + '0';
+            string[i] = temp + '0';
         else
-            string[n] = temp + 7 + '0';
-        n--;
+            string[i] = temp + 7 +'0'; 
     }
     print_string(string);
 }
@@ -103,3 +104,24 @@ int strcmp(char s1[], char s2[])
     return s1[i] - s2[i];
 }
 
+void split_string(char s[], char s1[], char s2[])
+{
+
+    int i = 0, j = 0;
+    while(s[i] != ' ')
+    {
+        if(i > 10) break;
+        s1[i] = s[i];
+        i++;
+    }
+    s1[i] = '\0';
+    i++;
+    while(s[i] != '\0')
+    {
+        // if(j>10) break;
+        s2[j] = s[i];
+        i++;
+        j++;
+    }
+    s2[j] = '\0';
+}

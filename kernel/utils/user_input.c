@@ -1,28 +1,5 @@
 #include "user_input.h"
-
-void split_string(char s[], char s1[], char s2[])
-{
-
-    int i = 0, j = 0;
-    while(s[i] != ' ')
-    {
-        if(i > 10) break;
-        s1[i] = s[i];
-        i++;
-    }
-    s1[i] = '\0';
-    i++;
-    while(s[i] != '\0')
-    {
-        // if(j>10) break;
-        s2[j] = s[i];
-        i++;
-        j++;
-    }
-    s2[j] = '\0';
-}
-
-
+#define NULL 0
 void user_input(char* input)
 {
 
@@ -70,10 +47,7 @@ void user_input(char* input)
             print_string("File system not implemented as of yet..");
         else if(strcmp(s1, "BG") == 0)
             change_background_color(s2);
-        else 
-            print_string("Not understood");
     }
-    
     print_string("\n>");
 
 }
